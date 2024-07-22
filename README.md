@@ -28,7 +28,7 @@ spec:
         spec:
           containers:
           - name: image-prune
-            image: pangyeons/image-prune:1.0
+            image: pangyeons/image-prune:1.1
             imagePullPolicy: IfNotPresent
             command: # 아래 command 배열 수정금지
             - /bin/sh
@@ -165,7 +165,7 @@ spec:
         spec:
           containers:
           - name: image-prune
-            image: pangyeons/image-prune:1.0
+            image: pangyeons/image-prune:1.1
             imagePullPolicy: IfNotPresent
             command: # 아래 command 배열 수정 및 삭제 금지
             - /bin/sh
