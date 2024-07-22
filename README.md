@@ -53,6 +53,8 @@ spec:
               value: ""
             - name: OS_USER
               value: ""
+            - name: PORT
+              value: ""
           restartPolicy: OnFailure
           volumes:
           - name: secret-sshkey
@@ -147,6 +149,7 @@ kubectl create secret generic apitoken --from-literal=apitoken=$API_TOKEN
 |OS_USER | Node들에 접속할 OS계정 | user | 기본값 : root | |
 | CRI_TYPE | 컨테이너 런타임 인터페이스 | docker/crictl | 기본값 : root | |
 | CONTROL_PLANE | CONTROL PLANE 도 정리 | true/false | 기본값 : true | |
+| PORT | k8s API PORT | 6443 | 기본값 : 6443 | |
 
 ## 6. Sample Cronjob Yaml
 ```
@@ -185,6 +188,8 @@ spec:
               value: "crictl"
             - name: CONTROL_PLANE # Control Plane에서는 동작안함.
               value: "false"
+            - name: PORT
+              value: "6443"
           restartPolicy: OnFailure
           volumes:
           - name: secret-sshkey
