@@ -1,6 +1,7 @@
 **note:** 해당 가이드는 지속적으로 수정 예정.
 ## Release Note
 1.0 - 첫번째 공개
+
 1.1(Now) - PORT 수정 가능
 
 # What is image-prune?
