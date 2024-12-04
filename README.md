@@ -57,6 +57,8 @@ spec:
               value: ""
             - name: PORT
               value: ""
+            - name: LOG_FILE
+              value: ""
           restartPolicy: OnFailure
           volumes:
           - name: secret-sshkey
