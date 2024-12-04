@@ -2,7 +2,9 @@
 ## Release Note
 1.0 - 첫번째 공개
 
-1.1(Now) - PORT 수정 가능
+1.1 - PORT 수정 가능 추가
+
+1.2(main) - Log 파일로 생성 기능 추가 /var/log/image-prune_yyyymmddhhMM.log
 
 # What is image-prune?
 k8s 를 이용하다보면 Node들에 container image들이 쌓이게 되는데 이를 정리하는 CronJob 이다
@@ -150,6 +152,7 @@ kubectl create secret generic apitoken --from-literal=apitoken=$API_TOKEN
 | CRI_TYPE | 컨테이너 런타임 인터페이스 | docker/crictl | 기본값 : root | |
 | CONTROL_PLANE | CONTROL PLANE 도 정리 | true/false | 기본값 : true | |
 | PORT | k8s API PORT | 6443 | 기본값 : 6443 | |
+| LOG_FILE | LOG_FILE 생성 유무 | true/false | 기본값 : false | |
 
 ## 6. Sample Cronjob Yaml
 ```
@@ -190,6 +193,8 @@ spec:
               value: "false"
             - name: PORT
               value: "6443"
+            - name: LOG_FILE
+              value: "true"
           restartPolicy: OnFailure
           volumes:
           - name: secret-sshkey
